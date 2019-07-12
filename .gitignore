@@ -1,0 +1,11 @@
+config.py
+__pycache__
+venv
+.idea
+main.py
+final.py
+final_bug.py
+image_url.txt
+joke.txt
+crawl_bugs.py
+copy11.py
