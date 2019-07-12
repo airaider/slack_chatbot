@@ -233,7 +233,7 @@ def getExercise(text):
 
 def intro(uu):
     head_section = SectionBlock(
-        text="안녕하세요 "+uu+" 회원님~~\n회원님의 식단과 운동을 책임질 마블리입니다\n우선은 회원님의 기본 정보를 입력해볼까요??\n아래 예시 처럼 입력해주세요 회원님~~\n사랑합니다~\n(ex : 남자(성별)/21(나이)/170(키)/60(몸무게))"
+        text="안녕하세요 "+uu+" 회원님~~\n회원님의 식단과 운동을 책임질 마블리입니다\n우선은 회원님의 기본 정보를 입력해볼까요??\n아래 예시 처럼 입력해주세요 회원님~~\n사랑합니다~\n(ex : 남자(성별)/21(나이)/170(키)/60(몸무게))\n도움말 기능은 /help를 입력해주세요~"
     )
     block1 = ImageBlock(
         image_url='https://lh3.googleusercontent.com/j-HyF2P80d2ZHcW9o6S5lY2arkW_jxY3r5rKLrQRRSJQeteRLmcgKu5T2pP5muQxEVVcS4jG-og1yeivxwi26EfjMiTCT-RTcqtSA1U4MwNSM4Bv402JQFrRHZF8t42dEQsioZ0BrNzRa-TQVCMVpgxhLY4e6rOksf_l1XWE393ekpl9Wu1eeO-UdvE-_7MSHvz5zol4lVU-ClMpkuK7wG5LXjQegDwrGu-XlcyYOqYnBIlA0n_2h0A1OR8RKH_pivQKI9dC_BxQ2SAYPcD7Gh2vugsiZZIDZrDy32tzYqunE_ld_LstUM_9gFQ2Ht2IN2fApEqg5N7PK_TZ61lRbL3i_gk81gWqF7kVqJsqslpBQnvWwrJTI5ftDvpMVQHkC8aDRdsJ7e4UoXnyikrsujZZPllRKCrAMEgwjFNJHGAO445EgKQ8IJ7v3x48-E-jql-n3McEV4gmzeh9mGQKVXJe3eCvB7UqlfqIEnDS8DuFN_QD7j6gprDJ6yA_GXM2fvAF4VDNTKCP5tL6h0XObyyt0QwgXLHQgRlRnh1gRxcva8QGZt2VTKsGnGAQC8qFqkwBIIpdFrSG-cz8gJybhxR5Lvchhy0YGqX4-ZZWPCcuyaiYmw-KAkdgBUFTnkTs0ywliOSsCFbceJVMEDdm_vSmKKxXpoU=w400-h283-no',
@@ -254,7 +254,7 @@ def app_mentioned(event_data):
     if 'admin' in text:
         keywords = uu
     elif 'help' in text:
-        keywords = "앱 초기 실행은 @test 을 mention\n정보 기입은 성별/나이/키/몸무게  *ex:남자/24/176/65 * 형식으로 기입\n음식 칼로리 검색은 *검색/음식명*\n먹은 음식 계산은 *음식/음식명*\n운동 관련 유튜브 영상 시청은 *운동/?*\n하루 권장 칼로리 안넘기도록 주의하세요!"
+        keywords = "앱 초기 실행은 @Mavely 을 mention\n정보 기입은 성별/나이/키/몸무게  *ex:남자/24/176/65 * 형식으로 기입\n음식 칼로리 검색은 *검색/음식명*\n먹은 음식 계산은 *음식/음식명*\n운동 관련 유튜브 영상 시청은 *운동/?*\n하루 권장 칼로리 안넘기도록 주의하세요!"
 
     elif "운동" in text:
         keywords = getExercise(text)
