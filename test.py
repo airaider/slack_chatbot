@@ -142,7 +142,7 @@ def findFood(food_name):
     return [head_section, block1]
 
 
-def eatFood(food_name,user):
+def eatFood(food_name,user,uu):
 
     with open("food5.csv", 'rt', encoding='UTF8') as file:
         kal = 0
@@ -166,7 +166,7 @@ def eatFood(food_name,user):
     if sumOfcal(user) > getBaseUser(user):
         head_section = SectionBlock(
             text="*" + food_name + "*" + " 을 먹어서 지금 " + "*" + str(
-                round(sumOfcal(user) - getBaseUser(user))) + "*" + " 칼로리를 초과했습니다.\n 회원님 갑시다, 진실의 방으로"
+                round(sumOfcal(user) - getBaseUser(user))) + "*" + " 칼로리를 초과했습니다.\n"+uu+" 회원님 갑시다, 진실의 방으로"
         )
         block1 = ImageBlock(
             image_url='https://lh3.googleusercontent.com/zqYPnV3JrUx6Dc4e5XyejXpgToe9AgvLRQS9tZehGM3QJ5bgzn4ecnNbean_vehAc6lanCI_msyG90jiElDMthDEWm1a9ksEPSL9hXGWfvpvB59a_1FvhHV2I3fqgdGpzpeqVOCpdq7Sdgg8sPRR_K3j2Kzwl615_KU88EgQObn_JP_30eMoRXWuqIJOFhlRLyd-nubo9UmnBSWn0t92qu2ZUecdGvpmwqY0sIuOjSo4YORvW-VYYcFureJJRVDpwJh845vWRSPn0rn6amlk61j7Eaevse4X6ML2hJME7yiXxfjfCf1P_ZbxRlJoViPZXJayd_dPmWMTESf6WDDMEo8F4udtzkBo2N1MYgoJdaivWC00wA5zq-tXotVQTkJkZwAjUiDImjlYsCGW39sdZoo9y7uscK1wNcZkYrmnTa0o-LZQ-7r-4d63A67CdSFzPlfKrzkpRqawjCsKwMf_bv7ussAWSz1NhEf36bmHowhCjd14oCpgO4ZHEnGHNG1MOka_0gQIgFD-yw7JVYlLHQ70NsQ9ict5FZL6QNxsn2MkjiODvA6KbZf7zotrKir7tD06Cay5eDF3KbaRs4u1yS9NcR-cr8lCdcS63qnI7UvZNUPFRkkheRtopnBDQKqYnfH_AQbPGgf5qp6Ov5xntkuUOXB5IGE=w480-h347-no',
@@ -176,25 +176,25 @@ def eatFood(food_name,user):
 
     a = round(sumOfcal(user) / getBaseUser(user) * 100)
     if a < 25:
-        t ="*" + food_name + "*" + " 의 칼로리는 " + "*" + str(kal) + "*" + " 입니다 회원님~~.\n" + "누적된 칼로리는 " + str(
+        t ="*" + food_name + "*" + " 의 칼로리는 " + "*" + str(kal) + "*" + " 입니다 "+uu+" 회원님~~.\n" + "누적된 칼로리는 " + str(
             round(sumOfcal(user))) + " / " + str(
             getBaseUser(user)) + " *-------" + str(
             round(sumOfcal(user) / getBaseUser(user) * 100)) + "%" + "*" + " 입니다.\n잘 하고 계시니까, 칼로리 안넘치도록 조심하세요!"
         b = 'https://lh3.googleusercontent.com/CSu1I7gQX8bDjVYVBZxxAjhAVZfg4o2O-rTYXuHvIpwGgfJPV3X5w5iis58nRCQqL16Qubvr1yy2N_YM7ZXGsMhNTKVePFLWNSLG1qOVd7A2D0pd1NVHWW1lUq4BC90_jU9m7F0vw3TpZqONE32IXqwFaEh7X8wPBGBkcfih2yHU0w44FfVnlHhuLhf0jn0qMCpT9TfdfU-FlnymfARPh4BiQP2tTAtA74-JqO_BJwMG-hZJDn0KzFQ2wTO7pxG-D70I2u4SbUHkmsEpD41yxYvdS8pOUpHqlNMuX7CuH3tXS1jWJ-vAZbV27UpfoLBGgEbE3lwA_kaq-iUgQISt7_lrvZcpQ_2byx793fEgWOfCeIPOCr22JkEfXzOeJ_Y4tYOGqUpSLbn5yh8Aj3JmakvtaMtPogfsucrm0cR9kUYW98-n9LstAATvwP4Am44jK0xl8DZ0o8YA5vblX8xX252cQ-uWK0gl4MqNjjlgLbOhaxdExcgQ3e8bGH8TNzh0ewKKjJPI86M5U6fdcxNF4TTzEjC9kH-z-QibqENjaEGzgP3yzuCA7eGAXBPUEqoXAOH3G0KyKPJ0yXUS-IEib8PDI_r5i461spcG83KzRxhpfa5g1EPbUkYWzMEpYBCgYd73UIiwTaXvs9CiIHSKmm7DmkyTvK4=w540-h289-no'
     elif a < 50:
-        t ="*" + food_name + "*" + " 의 칼로리는 " + "*" + str(kal) + "*" + " 입니다 회원님~~.\n" + "누적된 칼로리는 " + str(
+        t ="*" + food_name + "*" + " 의 칼로리는 " + "*" + str(kal) + "*" + " 입니다 "+uu+" 회원님~~.\n" + "누적된 칼로리는 " + str(
             round(sumOfcal(user))) + " / " + str(
             getBaseUser(user)) + " *-------" + str(
             round(sumOfcal(user) / getBaseUser(user) * 100)) + "%" + "*" + " 입니다.\n아오, 회원님 때릴뻔 했네...\n 회원님 적당히 먹으세요\n부탁드리겠습니다~"
         b = 'https://lh3.googleusercontent.com/QG_TduWV3ygep12RCS-h3nuBIJomlBxkTRGxTXXSg9F9PqMCiELoiGbBXzS4V9zQvCDV6hH7Qwy9rJ4VMLFUjLXR0IaPukOzKXisWtu0zdEzsZ9KQfp4TKz2iLHkd8hUKukWHOMhYfd1SukIx-G4pQCBJ8KfWybnr7KB9uXY44kZJOl97aBa3oKyVa3B1ni7zC76f7keWW-ZUH4os1_ZjGRYpd7aTEhEdAH8KI8YvfwEP4uVXMCtEeT_Ruyjd4VXWEDBu4_lg_zz-6e7YSPS7tyOAB_gZ5Oj1jB44X2FOS2fkDx0W_DmwxqA9vBZ-4V1jOPhzdjM0AOMnGfSO-V_dNeHGGrvjHss_BqVnvKrMp_ShgP5IDbxJq5G5VK2qiP4zdB-l4oXwycz1AuhY4_zV_aRRLmPZ7A891Tke2692Dxd2AX5SdoWUWWUZJYGOxFWyCs8E1QvWPr06vyC5MHSr4RZX0bl4ls2l-4I8ncWT-vdD1MfvURs0-miAKMKybhTrSbYXb5qeh8bxbRxab3L_QdNHT57yp20P3SxOh8Pq-OiEJs6jgj1jIWKdPD4_zz7BLXeqowSd3LesCwWRZdLi3442jPOatbKjgJiTk-wnfz87y2fFpX4o7mhn2BTvLUmYyf1wx9ZXEg9uPCS5rVPRBAyt-oYl7U=w674-h448-no'
     elif a < 75:
-        t = "*" + food_name + "*" + " 의 칼로리는 " + "*" + str(kal) + "*" + " 입니다 회원님.\n" + "누적된 칼로리는 " + str(
+        t = "*" + food_name + "*" + " 의 칼로리는 " + "*" + str(kal) + "*" + " 입니다 "+uu+" 회원님.\n" + "누적된 칼로리는 " + str(
             round(sumOfcal(user))) + " / " + str(
             getBaseUser(user)) + " *-------" + str(
             round(sumOfcal(user) / getBaseUser(user) * 100)) + "%" + "*" + " 입니다.\n회원님... 상큼하게 터져볼래요?\n지금 칼로리 위험위험 합니다 ^^"
         b = 'https://lh3.googleusercontent.com/WT9FEKwAw66v363gOt5TRBIzhLC_eUUyxgeIUGLRYhiCK_-Igpb0L2Fa2jzdB6fNmt8NftUu2RQ1GZ4B0ZLvNJ5WJSTmYUwgVz-f8AaQrF3Jr3M-Lxiamh1dcluggto_-qtEdSlM_0R4xfK45CpJtk8h-VSW2RNwyLUC4BNpNZsmXoDe14duD_CiODAJOAS0yvCvJQp7yzY2jWy3BUN3QwGxdCmidw9kM2nhzZGKNyo3OCbvBACKGVloxnuCfXQLB96tn4yxBcKjG_gxo0Mxod2kZL4PDWg0ovAEQHkF66mOe7Pyd2xp0wjume36wK4UTXXX2GbGpvZxypkiXm8EFTPDLURVu5Z_XxBCQargbZ9U6tR0c0EBf7SxZw6UAx52IisnVAmDzyvgg-JgLF_YjKb0UsJi2rEvMjMmeJbA9UnG2EWRV90LC3XTDjx34hpK6gPfJSIygx4hxkKZun0_jV0a9bQM-otHiG8_0hElej1wQm0FenEdYBnMBODEDw-48kozRKnUC-wkpqgwOTRN4vxriPkbuM7U1baBji-UZ60LjtVhQS2_ujO0mj-6xKEI5KahZl2Q8TP6MjvlalR3t9PvJKrlp3KRGaT9UWu9JpoWMveBi6nykfi2R6bJJP78BnwOYBjqJpfCgX1i9dJsgetj0ACmaxo=w700-h404-no'
     elif a < 100:
-        t = "*" + food_name + "*" + " 의 칼로리는 " + "*" + str(kal) + "*" + " 입니다 회원님.\n" + "누적된 칼로리는 " + str(
+        t = "*" + food_name + "*" + " 의 칼로리는 " + "*" + str(kal) + "*" + " 입니다 "+uu+" 회원님.\n" + "누적된 칼로리는 " + str(
             round(sumOfcal(user))) + " / " + str(
             getBaseUser(user)) + " *-------" + str(
             round(sumOfcal(user) / getBaseUser(user) * 100)) + "%" + "*" + " 입니다.\n회..회원님... \n아 말리지 말아봐요..!!"
@@ -271,7 +271,7 @@ def app_mentioned(event_data):
             text, user_id))+"*" + " 이네요~\n이 이상 드시면 이 이상 드시면 살이 디룩디룩 찔테니 절--대 넘기시면 안됩니다!!\n앞으로는 음식먹기 전에 저한테 항상 검사를 맡아야 합니다!"
     elif "음식" in text:
         food = text.split('/')[1]
-        keywords = eatFood(food,user_id)
+        keywords = eatFood(food,user_id,uu)
         slack_web_client.chat_postMessage(
             channel=channel,
             blocks=extract_json(keywords)
